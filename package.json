@@ -1,6 +1,6 @@
 {
-  "name": "cotizacion-criptomonedas",
-  "homepage": "https://panchoarc.github.io/cotizacion-criptomonedas/",
+  "name": "cotizador-criptomonedas",
+  "homepage": "https://panchoarc.github.io/cotizador-criptomonedas",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
