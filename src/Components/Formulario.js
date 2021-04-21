@@ -214,7 +214,7 @@ const Formulario = ({ setmoneda, setcriptomoneda }) => {
     const consultarAPI = async () => {
       const URL =
         "https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD";
-
+      axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
       const resultado = await axios.get(URL);
       setlistaCripto(resultado.data.Data);
     };
@@ -229,9 +229,7 @@ const Formulario = ({ setmoneda, setcriptomoneda }) => {
       return;
     }
     seterror(false);
-    console.log(moneda);
     setmoneda(moneda);
-    console.log(criptomoneda);
     setcriptomoneda(criptomoneda);
   };
 

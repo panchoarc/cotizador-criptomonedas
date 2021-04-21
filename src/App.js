@@ -49,17 +49,14 @@ function App() {
   const [cargando, setcargando] = useState(false);
 
   useEffect(() => {
-    
     const cotizarCriptomoneda = async () => {
       if (moneda === "") return;
-
       const URL = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${criptomoneda}&tsyms=${moneda}`;
 
       await axios
         .get(URL)
         .then((resultado) => {
           if (!resultado.data?.Response) {
-            console.log(resultado);
             setcargando(true);
             setError(false);
 
@@ -70,7 +67,9 @@ function App() {
           } else {
             setresultado({});
             setError(true);
-            setmensaje("No se puede realizar la cotización, no se encuentra la moneda");
+            setmensaje(
+              "No se puede realizar la cotización, no se encuentra la moneda"
+            );
           }
         })
         .catch((err) => {
